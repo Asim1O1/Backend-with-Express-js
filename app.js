@@ -1,6 +1,8 @@
 import express from "express";
 import adminRoutes from "./routes/admin.js";
 
+import shopRouter from "./routes/shop.js";
+
 const server = express();
 
 // Middleware to parse JSON bodies
@@ -13,9 +15,7 @@ server.use(express.urlencoded({ extended: true }));
 server.use("/admin", adminRoutes);
 
 // Home route
-server.get("/", (req, res) => {
-  res.status(200).send("<h1>This is the Home Page</h1>");
-});
+server.use("/", shopRouter);
 
 // 404 handler
 server.use((req, res) => {
