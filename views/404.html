@@ -5,46 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Page Not Found</title>
     <style>
+      :root {
+        --primary-color: #3498db;
+        --secondary-color: #e74c3c;
+        --background-color: #ecf0f1;
+        --text-color: #2c3e50;
+      }
+
       body {
-        font-family: Arial, sans-serif;
-        background-color: #f8f9fa;
-        color: #343a40;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-color);
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
         margin: 0;
+        overflow: hidden;
       }
+
       .container {
         text-align: center;
+        background-color: white;
+        padding: 3rem;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        animation: fadeIn 0.5s ease-out;
       }
+
       h1 {
-        font-size: 3em;
+        font-size: 4em;
         margin-bottom: 0.5em;
+        color: var(--secondary-color);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
       }
+
       p {
         font-size: 1.5em;
-        margin-bottom: 1em;
+        margin-bottom: 1.5em;
+        color: var(--text-color);
       }
+
       a {
         text-decoration: none;
         color: white;
-        background-color: #007bff;
-        padding: 0.5em 1em;
-        border-radius: 5px;
-        font-size: 1em;
-        transition: background-color 0.3s ease;
+        background-color: var(--primary-color);
+        padding: 0.75em 1.5em;
+        border-radius: 50px;
+        font-size: 1.1em;
+        transition: all 0.3s ease;
+        display: inline-block;
       }
+
       a:hover {
-        background-color: #0056b3;
+        background-color: #2980b9;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          padding: 2rem;
+        }
+
+        h1 {
+          font-size: 3em;
+        }
+
+        p {
+          font-size: 1.2em;
+        }
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>Oops... Page Not Found</h1>
-      <p>The page you are looking for does not exist.</p>
-      <a href="/">Go to Homepage</a>
+      <h1>404</h1>
+      <p>Oops! The page you are looking for has gone on vacation.</p>
+      <a href="/">Take Me Home</a>
     </div>
   </body>
 </html>

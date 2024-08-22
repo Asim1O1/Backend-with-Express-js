@@ -19,7 +19,7 @@ server.use("/", shopRouter);
 
 // 404 handler
 server.use((req, res) => {
-  res.sendStatus(404).sendFile(path.join(rootPath, "views", "404.html"));
+  res.sendFile(path.join(rootPath, "..", "views", "404.html"));
 });
 
 const PORT = process.env.PORT || 3000;
