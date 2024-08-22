@@ -1,17 +1,13 @@
 import express from "express";
 import { Router } from "express";
 import path from "path";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
+import rootPath from "../utils/path.js";
 
 const router = Router();
 
-const __fileName = fileURLToPath(import.meta.url);
-const __dirname = dirname(__fileName);
-
 // Route to serve the form
 router.get("/addProduct", (req, res) => {
-  res.sendFile(path.join(__dirname, "..", "views", "addProduct.html"));
+  res.sendFile(path.join(rootPath, "..", "views", "addProduct.html"));
 });
 
 // Route to handle form submission

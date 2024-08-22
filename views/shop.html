@@ -3,19 +3,96 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Add Product</title>
+    <title>My Products</title>
+    <style>
+      :root {
+        --primary-color: #3498db;
+        --text-color: #2c3e50;
+        --background-color: #ecf0f1;
+        --header-color: #2c3e50;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      header {
+        background-color: var(--header-color);
+        padding: 1em;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      nav ul li {
+        margin: 0 15px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: color 0.3s ease;
+      }
+
+      nav ul li a:hover {
+        color: var(--primary-color);
+      }
+
+      main {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      }
+
+      h1 {
+        text-align: center;
+        color: var(--primary-color);
+        font-size: 2.5em;
+        margin-bottom: 30px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+
+      @media (max-width: 600px) {
+        main {
+          margin: 20px;
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 2em;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
       <nav>
         <ul>
-          <li <a href="/"></a> Home></li>
-          <li <a href="/addProduct"></a>Add Product></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/admin/addProduct">Add Product</a></li>
         </ul>
       </nav>
     </header>
     <main>
-        <h1>My Products</h1>
+      <h1>My Products</h1>
     </main>
   </body>
 </html>

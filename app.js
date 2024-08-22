@@ -1,10 +1,8 @@
 import express from "express";
 import adminRoutes from "./routes/admin.js";
 import path from "path";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
 import shopRouter from "./routes/shop.js";
-
+import rootPath from "./utils/path.js";
 const server = express();
 
 // Middleware to parse JSON bodies
@@ -19,13 +17,9 @@ server.use("/admin", adminRoutes);
 // Home route
 server.use("/", shopRouter);
 
-// Define __dirname for ES modules
-const __fileName = fileURLToPath(import.meta.url);
-const __dirname = dirname(__fileName);
-
 // 404 handler
 server.use((req, res) => {
-  res.send(404).sendFile(path.join(__dirname, "views", "404.html"));
+  res.sendStatus(404).sendFile(path.join(rootPath, "views", "404.html"));
 });
 
 const PORT = process.env.PORT || 3000;
